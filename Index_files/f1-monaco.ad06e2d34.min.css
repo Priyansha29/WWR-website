@@ -34,3 +34,74 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   font-style: normal;
   font-display: swap;
 }
+
+.logo-screen {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flame-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42vw;
+  color: #ff1a00;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1;
+  animation: bounce 2s infinite;
+  transform: skewX(-10deg);
+
+  /* 🖤 Crisp black outline with layered shadow */
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+}
+
+    .flame-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .flame {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: radial-gradient(circle, #ffcc00 0%, #ff3300 60%, transparent 100%);
+      border-radius: 50%;
+      animation: rise 2s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) skewX(-10deg);
+  }
+  50% {
+    transform: translateY(-20px) skewX(-10deg);
+  }
+}
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+      }
+      50% {
+        transform: translateY(-40px) scale(1.2);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-100px) scale(0.8);
+        opacity: 0;
+      }
+    }
+
+    

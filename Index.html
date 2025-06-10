@@ -22,6 +22,84 @@
     <link rel="manifest" href="/site.webmanifest">
     <link href="Index_files/f1-monaco.ad06e2d34.min.css" rel="stylesheet" type="text/css">
     <style>
+    @media (max-width: 768px) {
+      /* Prevent horizontal overflow */
+      body {
+        overflow-x: hidden; /* Very important */
+      }
+
+      /* Make containers responsive */
+      .container-large,
+      .container-medium,
+      .container-small {
+        width: 100%; /* Take up full width */
+        max-width: 100%; /* Prevent exceeding screen width */
+        margin-left: 0 !important; /* Override any existing margins */
+        margin-right: 0 !important;
+        padding-left: 10px; /* Add some side padding */
+        padding-right: 10px;
+        box-sizing: border-box; /* Include padding in width calculation */
+      }
+
+      /* Stack grid items vertically */
+      .f1_schedule-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 10px; /* Add spacing between items */
+      }
+
+      /* Force images to fit their containers */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Adjust absolutely positioned images */
+      .side-image {
+        position: relative; /* Make it flow with the content */
+        float: none; /* Remove floating */
+        width: 80%; /* Adjust width as needed */
+        margin: 0 auto; /* Center horizontally */
+        left: auto; /* Remove absolute positioning */
+        right: auto;
+        top: auto;
+        bottom: auto;
+        display: block; /* Ensure it's a block-level element */
+      }
+      .page-padding, .container-large, .container-medium, .container-small {
+    padding: 1rem !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+}
+      .top-image {
+        position: relative; /* Make it flow with the content */
+        float: none; /* Remove floating */
+        width: 80%; /* Adjust width as needed */
+        margin: 0 auto; /* Center horizontally */
+        left: auto; /* Remove absolute positioning */
+        right: auto;
+        top: auto;
+        bottom: auto;
+        display: block; /* Ensure it's a block-level element */
+      }
+
+      /* Adjust Lottie player (if needed) - consider hiding it on mobile */
+      .scroll-image-container lottie-player {
+        display: none; /* Hide on mobile for better performance */
+      }
+
+      /* Improve readability of text */
+      h1, h2, h3, p {
+        font-size: larger; /* Increase font size */
+        line-height: 1.4; /* Improve line spacing */
+      }
+
+      /* Make menu links more touch-friendly */
+      .f1_menu-link {
+        padding: 10px 15px; /* Increase padding */
+        font-size: 1.2em; /* Increase font size */
+      }
+    }
+    
         .scroll-image-container {
             position: fixed;
             bottom: 0;
@@ -89,39 +167,31 @@
         }
 
 
-        @media (max-width: 768px) {
-            .f1_schedule-grid {
-                grid-template-columns: 1fr;
-                /* Stack on small screens */
-            }
+
 
             .f1_grid-map-container img {
-                width: 400px;
-                /* Set a fixed width, adjust as needed */
-                height: auto;
-                max-width: 120%;
-                /* Allow image to exceed container width if needed */
+                width: 100%; /* Ensure images scale down to fit container */
+        max-width: 100%; /* Prevent image from overflowing its container */
+        height: auto;
             }
 
             .f1_grid-map-container {
-                width: 100%;
-                max-width: 100%;
-                padding: 1rem;
-                text-align: center;
-                box-sizing: border-box;
-                overflow-x: auto;
-
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-
-                margin-left: 3rem;
-                /* 👈 pushes container to the right */
-            }
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem;
+        text-align: center;
+        box-sizing: border-box;
+        overflow-x: hidden; /* Hide horizontal overflow for this specific container */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-left: auto; /* Change from 3rem to auto for proper centering */
+        margin-right: auto; /* Add margin-right for proper centering */
+    }
 
 
-        }
+        
 
         @media (min-width:992px) {
             html.w-mod-js:not(.w-mod-ix) [data-w-id="05253355-7339-bbd3-87b1-9cd05d94c317"] {
@@ -310,11 +380,7 @@
                     margin-top: 0.5rem;
                 }
 
-                @media (max-width: 768px) {
-                    .f1_grid-race-track {
-                        max-width: 100%;
-                    }
-
+              
                     .track-label {
                         font-size: 1.2rem;
                         top: 20px;
@@ -324,7 +390,7 @@
                     .track-label small {
                         font-size: 0.8rem;
                     }
-                }
+                
 
                 /* Snippet gets rid of top margin on first element in any rich text*/
                 .w-richtext>:first-child {
@@ -367,7 +433,7 @@
                     margin-right: auto !important;
                     margin-left: 11rem;
                 }
-
+                
                 /*Reset buttons, and links styles*/
                 a {
                     color: inherit;
@@ -382,7 +448,9 @@
 
                     -webkit-box-orient: vertical;
                 }
-
+                .flame-text {
+  font-style: normal !important; /* This will override any other font-style rules */
+}
                 .f1_leaderboard-driver-container {
                     top: -30px
                 }
@@ -513,7 +581,7 @@
                 <div class="page-padding">
                     <div class="container-large">
                         <div class="logo-screen">
-                            <h1 class="flame-text">WWR</h1>
+                            <h1 class="flame-text"><img src="Index_files\Main_WWR.png" alt="Logo"style=" margin-top: -5rem;margin-left: -5rem; max-width: 100%;"></h1>
                             <div class="flame-particles" id="flames"></div>
                         </div>
 
@@ -926,14 +994,6 @@
                                 <div class="w-layout-grid f1_link-list"><a href="#" class="f1_link underline">Latest</a><a href="#" class="f1_link underline">Video</a><a href="#" class="f1_link underline">Schedule</a><a href="#" class="f1_link underline">Standings</a><a href="#" class="f1_link underline">Drivers</a><a href="#" class="f1_link underline">Teams</a><a href="#" class="f1_link underline">Live Training</a></div>
                             </div>
                         </div>
-                        <div class="line-divider"></div>
-                        <div class="padding-top padding-medium">
-                            <div class="f1_footer-bottom-wrapper">
-                                <div class="f1_footer-credit-text">© 2022 Formula One World Championship Limited. All right reserved.</div>
-                                <div class="w-layout-grid f1_footer_legal-list"><a href="#" class="f1_footer_legal-link">Privacy Policy</a><a href="#" class="f1_footer_legal-link">Terms of Service</a><a href="#" class="f1_footer_legal-link">Cookies Settings</a></div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </footer>

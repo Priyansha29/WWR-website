@@ -46,7 +46,7 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
   font-family: 'Bebas Neue', sans-serif;
   font-size: 42vw;
   color: #ff1a00;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.2em;
   position: relative;
   z-index: 1;
   animation: bounce 2s infinite;
@@ -104,4 +104,31 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
       }
     }
 
-    
+    /* Remove unwanted space above header */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .main-wrapper,
+  .f1_section-header,
+  .page-padding,
+  .container-large,
+  .logo-screen {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .f1_section-header {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .flame-text {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .w-webflow-badge {
+  display: none !important;
+}

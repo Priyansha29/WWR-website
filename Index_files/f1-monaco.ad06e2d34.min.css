@@ -43,14 +43,15 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
     }
 
     .flame-text {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 42vw;
+  font-family: 'Russo One', sans-serif;
+  font-size: 30vw;
   color: #ff1a00;
   letter-spacing: 0.2em;
   position: relative;
   z-index: 1;
   animation: bounce 2s infinite;
   transform: skewX(-10deg);
+  margin-bottom: 6rem;
 
   /* 🖤 Crisp black outline with layered shadow */
   text-shadow:

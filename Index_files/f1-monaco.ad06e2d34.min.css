@@ -138,4 +138,27 @@ html, body {
   text-align: center;
 }
 
+/* Wrap the scrolling content */
+.f1_social-ribbon-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animate the inner container */
+#ribbonScroll {
+  display: flex;
+  width: fit-content;
+  animation: ribbonLoop 40s linear infinite;
+}
+
+/* Smooth looping */
+@keyframes ribbonLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 
